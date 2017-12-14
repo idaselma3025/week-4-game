@@ -39,6 +39,9 @@ else{
   poop = crap + poop;
   $("#currentScore").text(poop);
 }
+getWins();
+});
+function getWins(){
 if(poop === random){
   alert("good job");
   getRandomNumber();
@@ -56,5 +59,6 @@ else if(poop>random){
   $("#losses").text(lossCounter);
 
 }
-  });
+}
+
 });
