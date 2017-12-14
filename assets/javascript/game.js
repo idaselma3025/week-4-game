@@ -43,21 +43,18 @@ getWins();
 });
 function getWins(){
 if(poop === random){
-  alert("good job");
-  getRandomNumber();
-  $("#currentScore").empty();
-  setCurrent();
   winCounter ++;
   $("#wins").text(winCounter);
-}
-else if(poop>random){
-  alert("you suck");
   getRandomNumber();
   $("#currentScore").empty();
   setCurrent();
+}
+else if(poop>random){
   lossCounter++;
   $("#losses").text(lossCounter);
-
+  getRandomNumber();
+  $("#currentScore").empty();
+  setCurrent();
 }
 }
 
