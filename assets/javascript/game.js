@@ -25,13 +25,6 @@ function setCurrent (){
   getRandomNumber();
   setCurrent();
 
-  //function to assign hidden gem values between 1 and 12
-  // $("img").each(function(){
-  //   hidden = Math.floor(Math.random() * (12)) + 1;
-  //   $(this).attr("data-hidden",hidden);
-  //   console.log(hidden);
-  // });
-
   $("img").on("click",function(){
     if (poop === 0) {
     var crap = ($(this).attr("data-hidden"));
