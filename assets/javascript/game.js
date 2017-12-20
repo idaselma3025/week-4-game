@@ -3,14 +3,14 @@ $(document).ready(function() {
   var random;
   var score;
   var hidden;
-  var currentScore;
+  var poop;
   var winCounter=0;
   var lossCounter=0;
 
 function setCurrent (){
   $("#currentScore").attr("data-current",0);
-  currentScore = ($("#currentScore").attr("data-current"));
-  currentScore = parseInt(currentScore);
+  poop = ($("#currentScore").attr("data-current"));
+  poop = parseInt(poop);
 }
   // function to create and print random number on restart of game
   function getRandomNumber(){
@@ -26,35 +26,38 @@ function setCurrent (){
   setCurrent();
 
   $("img").on("click",function(){
-    if (currentScore === 0) {
-    var imgScore = ($(this).attr("data-hidden"));
-    imgScore= parseInt(imgScore);
-    $("#currentScore").attr("data-current",imgScore);
-    $("#currentScore").text(imgScore);
-    currentScore = imgScore;
+    if (poop === 0) {
+    var crap = ($(this).attr("data-hidden"));
+    crap = parseInt(crap);
+    $("#currentScore").attr("data-current",crap);
+    $("#currentScore").text(crap);
+    poop = crap;
 }
 else{
-  var currentScore = ($(this).attr("data-hidden"));
-  imgScore = parseInt(imgScore);
-  currentScore = imgScore + currentScore;
-  $("#currentScore").text(currentScore);
+  var crap = ($(this).attr("data-hidden"));
+  crap = parseInt(crap);
+  poop = crap + poop;
+  $("#currentScore").text(poop);
 }
 getWins();
 });
 function getWins(){
-if(currentScore === random){
+if(poop === random){
+  alert("good job");
+  getRandomNumber();
+  $("#currentScore").empty();
+  setCurrent();
   winCounter ++;
   $("#wins").text(winCounter);
+}
+else if(poop>random){
+  alert("you suck");
   getRandomNumber();
   $("#currentScore").empty();
   setCurrent();
-}
-else if(currentScore>random){
   lossCounter++;
   $("#losses").text(lossCounter);
-  getRandomNumber();
-  $("#currentScore").empty();
-  setCurrent();
+
 }
 }
 
